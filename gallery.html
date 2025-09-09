@@ -4,71 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery - Jackson Copeland</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-earth.css">
     <style>
         .gallery-header {
             text-align: center;
             padding: 4rem 0 2rem;
-            border-bottom: 2px solid #8b4513;
+            border-bottom: 2px solid #8b6914;
             margin-bottom: 3rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(139, 105, 20, 0.08);
         }
         
         .gallery-header h1 {
             font-size: 2.5rem;
             font-weight: 300;
             margin-bottom: 1rem;
-            color: #8b4513;
+            color: #8b6914;
         }
         
         .gallery-header p {
-            color: #666666;
+            color: #7a6b4d;
             font-size: 1.1rem;
         }
         
         .back-link {
             display: inline-block;
-            color: #8b4513;
+            color: #8b6914;
             text-decoration: none;
             margin-bottom: 2rem;
             font-size: 0.9rem;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(139, 105, 20, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
         
         .back-link:hover {
-            border-bottom-color: #8b4513;
+            background: rgba(139, 105, 20, 0.1);
+            border-color: rgba(139, 105, 20, 0.3);
         }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
         .gallery-photo {
             position: relative;
-            aspect-ratio: 4/3;
+            aspect-ratio: 1;
             overflow: hidden;
-            border: 2px solid #a0522d;
+            border: 2px solid rgba(139, 105, 20, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(139, 105, 20, 0.15);
             transition: all 0.3s ease;
             cursor: pointer;
         }
         
         .gallery-photo:hover {
             transform: translateY(-5px);
-            border-color: #8b4513;
-            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
+            border-color: rgba(139, 105, 20, 0.4);
+            box-shadow: 0 8px 25px rgba(139, 105, 20, 0.25);
         }
         
         .gallery-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
         }
         
         .gallery-photo:hover img {
+            filter: grayscale(0%);
             transform: scale(1.05);
         }
         
@@ -79,7 +89,7 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem 1rem;
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
@@ -89,15 +99,9 @@
         }
         
         .photo-info h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        
-        .photo-info p {
             margin: 0;
-            font-size: 0.85rem;
-            opacity: 0.9;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
         
         .load-more {
@@ -106,18 +110,22 @@
         }
         
         .load-more button {
-            background: transparent;
-            border: 2px solid #8b4513;
-            color: #8b4513;
-            padding: 0.8rem 2rem;
-            font-size: 0.9rem;
+            background: linear-gradient(135deg, #8b6914, #d4af37);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 105, 20, 0.2);
         }
         
         .load-more button:hover {
-            background: #8b4513;
-            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 105, 20, 0.3);
+            background: linear-gradient(135deg, #9d7618, #e6c546);
         }
     </style>
 </head>
@@ -131,98 +139,86 @@
 
         <div class="gallery-grid">
             <div class="gallery-photo">
-                <img src="photos/gallery-1.jpg" alt="Gallery photo 1" />
+                <img src="photos/gallery/IMG_1380.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Morning Light</h3>
-                    <p>January 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-2.jpg" alt="Gallery photo 2" />
+                <img src="photos/gallery/IMG_1381.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Urban Geometry</h3>
-                    <p>February 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-3.jpg" alt="Gallery photo 3" />
+                <img src="photos/gallery/IMG_1382.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Portrait Study #1</h3>
-                    <p>March 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-4.jpg" alt="Gallery photo 4" />
+                <img src="photos/gallery/IMG_1383.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Street Scene</h3>
-                    <p>March 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-5.jpg" alt="Gallery photo 5" />
+                <img src="photos/gallery/IMG_1384.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Nature's Patterns</h3>
-                    <p>April 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-6.jpg" alt="Gallery photo 6" />
+                <img src="photos/gallery/IMG_1385.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Golden Hour</h3>
-                    <p>April 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-7.jpg" alt="Gallery photo 7" />
+                <img src="photos/gallery/IMG_1386.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Abstract Forms</h3>
-                    <p>May 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-8.jpg" alt="Gallery photo 8" />
+                <img src="photos/gallery/IMG_1387.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>City Lights</h3>
-                    <p>May 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-9.jpg" alt="Gallery photo 9" />
+                <img src="photos/gallery/IMG_1388.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Portrait Study #2</h3>
-                    <p>June 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-10.jpg" alt="Gallery photo 10" />
+                <img src="photos/gallery/IMG_1389.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Landscape</h3>
-                    <p>June 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-11.jpg" alt="Gallery photo 11" />
+                <img src="photos/gallery/IMG_1390.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Urban Decay</h3>
-                    <p>July 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
             
             <div class="gallery-photo">
-                <img src="photos/gallery-12.jpg" alt="Gallery photo 12" />
+                <img src="photos/gallery/IMG_1391.jpeg" alt="Film Photography" />
                 <div class="photo-info">
-                    <h3>Street Life</h3>
-                    <p>July 2024 • 35mm</p>
+                    <h3>Coming Soon</h3>
                 </div>
             </div>
         </div>
