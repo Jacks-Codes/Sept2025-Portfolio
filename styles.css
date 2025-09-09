@@ -512,3 +512,13 @@ footer::after {
         gap: 1rem;
     }
 }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    .photography-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.25rem;
+    }
+}
