@@ -36,9 +36,9 @@ body::before {
 }
 
 header {
-    padding: 6rem 0 4rem;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 4rem;
+    padding: 4rem 0 3rem;
+    border-bottom: 2px solid #8b4513;
+    margin-bottom: 3rem;
     position: relative;
 }
 
@@ -84,9 +84,9 @@ header::after {
 
 nav {
     text-align: left;
-    padding: 0 0 3rem 0;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 4rem;
+    padding: 0 0 2rem 0;
+    border-bottom: 1px solid #a0522d;
+    margin-bottom: 3rem;
 }
 
 nav a {
@@ -124,17 +124,28 @@ main {
 }
 
 .section {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .section h2 {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 3rem;
-    color: #1a1a1a;
+    margin-bottom: 2rem;
+    color: #8b4513;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.8rem;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #8b4513, #a0522d);
 }
 
 .projects-grid {
@@ -144,9 +155,9 @@ main {
 .project-card {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #a0522d;
     border-radius: 0;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     transition: none;
     position: relative;
     margin-bottom: 0;
@@ -339,9 +350,9 @@ main {
 
 footer {
     text-align: left;
-    padding: 4rem 0 2rem 0;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 6rem;
+    padding: 3rem 0 2rem 0;
+    border-top: 2px solid #8b4513;
+    margin-top: 4rem;
     position: relative;
 }
 
