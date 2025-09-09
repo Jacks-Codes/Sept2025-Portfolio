@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Jackson Copeland</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-earth.css">
 </head>
 <body>
     <div class="container">
@@ -16,29 +16,49 @@
         </header>
 
         <nav>
-            <a href="#projects" class="active">Projects</a>
+            <a href="#about" class="active">About</a>
+            <a href="#projects">Projects</a>
             <a href="#photography">Photography</a>
-            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
 
         <main>
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>Computer Science Student at California State University, Los Angeles. Aspiring software engineer and web developer with knowledge in data science and machine learning. Aspiring film photographer when inspiration strikes and I'm not coding.</p>
+                    <p>When I'm not coding, you can find me in nature with my camera, exploring new camping sites, or sitting in a dark room with my computer.</p>
+                    
+                    <div class="skills-section">
+                        <h3>Skills & Interests</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">Data Science</span>
+                            <span class="skill-tag">Film Photography</span>
+                            <span class="skill-tag">AI Research</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="projects" class="section">
                 <h2>Featured Work</h2>
-                <div class="projects-grid">
-                    <div class="project-card coming-soon">
-                        <div class="coming-soon-content">
-                            <div class="coming-soon-icon">🤖</div>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-details">
                             <h3>Image Recognition Bot</h3>
+                            <p>An intelligent image recognition project that applies deep learning to classify rock types from photos in real time.</p>
                             <div class="project-meta">
-                                <span>Machine Learning</span>
-                                <span>Python • AI</span>
-                                <span>In Development</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">AI</span>
                             </div>
-                            <p>An intelligent image recognition project that applies deep learning to classify rock types from photos in real time. Currently in development.</p>
-                            <div class="coming-soon-badge">
+                            <div class="project-status">
                                 <span class="pulse-dot"></span>
-                                Coming Soon
+                                In Development
                             </div>
                         </div>
                     </div>
@@ -47,93 +67,84 @@
 
             <section id="photography" class="section">
                 <h2>Film Photography</h2>
-                <div class="photography-grid">
-                    <div class="photo-featured">
-                        <img src="photos/featured-1.jpeg" alt="Featured photo 1" />
-                        <div class="photo-overlay">
+                <div class="photography-grid-3x3">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-1.jpeg" alt="Beaudry at Sunset" />
+                        <div class="photo-caption">
                             <p>Beaudry at Sunset</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-2.jpeg" alt="Featured photo 2" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-2.jpeg" alt="Road in Santa Barbara County" />
+                        <div class="photo-caption">
                             <p>Road in Santa Barbara County</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-3.jpeg" alt="Featured photo 3" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-3.jpeg" alt="Barn in Santa Barbara County" />
+                        <div class="photo-caption">
                             <p>Barn in Santa Barbara County</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-4.jpeg" alt="Featured photo 4" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-4.jpeg" alt="Huntington Gardens" />
+                        <div class="photo-caption">
                             <p>Huntington Gardens</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-5.jpeg" alt="Featured photo 5" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-5.jpeg" alt="Nature's Patterns" />
+                        <div class="photo-caption">
                             <p>Nature's Patterns</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-6.jpeg" alt="Featured photo 6" />
-                        <div class="photo-overlay">
-                            <p>Japanses Garden</p>
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-6.jpeg" alt="Japanese Garden" />
+                        <div class="photo-caption">
+                            <p>Japanese Garden</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-7.jpeg" alt="Featured photo 7" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-7.jpeg" alt="Fog on the Coast" />
+                        <div class="photo-caption">
                             <p>Fog on the Coast</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-8.jpeg" alt="Featured photo 8" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-8.jpeg" alt="Bug in a Frame" />
+                        <div class="photo-caption">
                             <p>Bug in a Frame</p>
                         </div>
                     </div>
-                    <div class="photo-featured">
-                        <img src="photos/featured-9.jpeg" alt="Featured photo 9" />
-                        <div class="photo-overlay">
+                    <div class="photo-item">
+                        <img src="photos/featured/featured-9.jpeg" alt="Triangles featuring Anagha" />
+                        <div class="photo-caption">
                             <p>Triangles featuring Anagha</p>
                         </div>
                     </div>
-                    <div class="photo-stack" onclick="window.location.href='gallery.html'">
-                        <div class="stack-photos">
-                            <img class="stack-photo stack-1" src="photos/featured-7.jpeg" alt="Stack preview 1" />
-                            <img class="stack-photo stack-2" src="photos/featured-8.jpeg" alt="Stack preview 2" />
-                            <img class="stack-photo stack-3" src="photos/featured-9.jpeg" alt="Stack preview 3" />
-                        </div>
-                        <div class="stack-text">
-                            <h3>View All Photos</h3>
-                            <p>Chronological gallery</p>
-                        </div>
-                    </div>
                 </div>
-            </section>
-
-            <section id="about" class="section">
-                <h2>About Me</h2>
-                <div class="project-card">
-                    <p>Computer Science Student at California State University,Los Angeles. Aspiring software engineer and web developer with knowledge in data science and machine learning. Aspiring film photographer when inspiratoin strikes and im not coding.</p>
-                    <br>
-                    <p>When I'm not coding, you can find me in nature with my camera, exploring new camping sites, or sitting in a dark room with my computer.</p>
+                <div class="gallery-button-container">
+                    <button class="gallery-button" onclick="showAllPhotos()">View Full Gallery</button>
                 </div>
             </section>
 
             <section id="contact" class="section">
                 <h2>Let's Connect</h2>
-                <div class="project-card">
-                    <p>Interested in working together or just want to chat about technology and design? I'd love to hear from you!</p>
+                <div class="contact-content">
+                    <p>Interested in working together or just want to chat about technology and photography? I'd love to hear from you!</p>
                     <div class="contact-links">
-                        <a href="mailto:jacksoncopeland79@gmail.com">Email</a>
-                        <a href="https://www.linkedin.com/in/jackson-copeland-b91590383" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="https://github.com/Jacks-Codes" target="_blank" rel="noopener">GitHub</a>
-            
+                        <a href="mailto:jacksoncopeland79@gmail.com" class="contact-link">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-detail">jacksoncopeland79@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jackson-copeland-b91590383" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-detail">jackson-copeland-b91590383</span>
+                        </a>
+                        <a href="https://github.com/Jacks-Codes" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-detail">Jacks-Codes</span>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -143,5 +154,57 @@
             <p>&copy; 2025 Jackson Copeland. All rights reserved.</p>
         </footer>
     </div>
+    <script>
+        function showAllPhotos() {
+            // Simple modal-style gallery display
+            alert('Gallery feature coming soon! For now, you can see all photos in the photography section above.');
+            
+            // Scroll back to photography section
+            document.getElementById('photography').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        // Simple navigation active state management
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+            
+            // Update active nav link based on scroll position
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Handle nav link clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
