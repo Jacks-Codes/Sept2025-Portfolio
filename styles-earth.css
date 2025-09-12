@@ -607,15 +607,16 @@ main {
 
 /* Footer */
 footer {
-    background: rgba(139, 105, 20, 0.05);
+    background: #faf8f5;
     text-align: center;
     padding: 3rem 2rem;
     margin-top: 4rem;
     margin-bottom: 2rem;
-    border-top: 1px solid rgba(139, 105, 20, 0.2);
-    color: #7a6b4d;
-    font-size: 0.9rem;
-    width: 100%;
+    margin-left: -40px;
+    margin-right: -40px;
+    color: rgba(122, 107, 77, 0.7);
+    font-size: 0.85rem;
+    width: calc(100% + 80px);
     box-sizing: border-box;
 }
 
@@ -685,6 +686,9 @@ footer {
     footer {
         padding: 2rem 1rem;
         margin-bottom: 1rem;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
     }
 }
 
@@ -710,5 +714,8 @@ footer {
         padding: 1.5rem 1rem;
         margin-bottom: 0.5rem;
         font-size: 0.8rem;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
     }
 }
