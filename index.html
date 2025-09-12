@@ -33,8 +33,10 @@
             <section id="about" class="section">
                 <h2>About Me</h2>
                 <div class="about-content">
-                    <p>Computer Science Student at California State University, Los Angeles. Aspiring software engineer and web developer with knowledge in data science and machine learning. Aspiring film photographer when inspiration strikes. Raised in Redding California, based in Los Angeles.</p>
-                    <p>When I'm not coding, you can find me in nature with my camera, exploring new camping sites, or sitting in a dark room with my computer.</p>
+                    <p>I’m a Computer Science student at California State University, Los Angeles, working toward a career as a software engineer and web developer. 
+                        I also have a growing interest in data science and machine learning.</p>
+                    <p>Outside of coding, I enjoy film photography, camping, and spending time in nature. Originally from Redding and now based in Los Angeles, 
+                        I like to balance time behind the screen with time outdoors and creative projects.</p>
                     
                     <div class="skills-section">
                         <h3>Skills & Interests</h3>
@@ -75,56 +77,56 @@
             <section id="photography" class="section">
                 <h2>Film Photography</h2>
                 <div class="photography-grid-3x3">
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-1.jpeg" alt="Beaudry at Sunset" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-1.jpeg" data-caption="Beaudry at Sunset">
+                        <img src="photos/featured/thumbs/featured-1.jpeg" alt="Beaudry at Sunset" loading="lazy" />
                         <div class="photo-caption">
                             <p>Beaudry at Sunset</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-2.jpeg" alt="Road in Santa Barbara County" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-2.jpeg" data-caption="Road in Santa Barbara County">
+                        <img src="photos/featured/thumbs/featured-2.jpeg" alt="Road in Santa Barbara County" loading="lazy" />
                         <div class="photo-caption">
                             <p>Road in Santa Barbara County</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-3.jpeg" alt="Barn in Santa Barbara County" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-3.jpeg" data-caption="Barn in Santa Barbara County">
+                        <img src="photos/featured/thumbs/featured-3.jpeg" alt="Barn in Santa Barbara County" loading="lazy" />
                         <div class="photo-caption">
                             <p>Barn in Santa Barbara County</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-4.jpeg" alt="From the Bank of a Creek" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-4.jpeg" data-caption="From the Bank of a Creek">
+                        <img src="photos/featured/thumbs/featured-4.jpeg" alt="From the Bank of a Creek" loading="lazy" />
                         <div class="photo-caption">
                             <p>From the Bank of a Creek</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-5.jpeg" alt="Nature's Patterns" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-5.jpeg" data-caption="Nature's Patterns">
+                        <img src="photos/featured/thumbs/featured-5.jpeg" alt="Nature's Patterns" loading="lazy" />
                         <div class="photo-caption">
                             <p>Nature's Patterns</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-6.jpeg" alt="Japanese Garden" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-6.jpeg" data-caption="Japanese Garden">
+                        <img src="photos/featured/thumbs/featured-6.jpeg" alt="Japanese Garden" loading="lazy" />
                         <div class="photo-caption">
                             <p>Japanese Garden</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-7.jpeg" alt="Fog on the Coast" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-7.jpeg" data-caption="Fog on the Coast">
+                        <img src="photos/featured/thumbs/featured-7.jpeg" alt="Fog on the Coast" loading="lazy" />
                         <div class="photo-caption">
                             <p>Fog on the Coast</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-8.jpeg" alt="Bug in a Frame" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-8.jpeg" data-caption="Bug in a Frame">
+                        <img src="photos/featured/thumbs/featured-8.jpeg" alt="Bug in a Frame" loading="lazy" />
                         <div class="photo-caption">
                             <p>Bug in a Frame</p>
                         </div>
                     </div>
-                    <div class="photo-item">
-                        <img src="photos/featured/featured-9.jpeg" alt="Triangles featuring Anagha" />
+                    <div class="photo-item" data-full-src="photos/featured/featured-9.jpeg" data-caption="Triangles">
+                        <img src="photos/featured/thumbs/featured-9.jpeg" alt="Triangles featuring Anagha" loading="lazy" />
                         <div class="photo-caption">
                             <p>Triangles</p>
                         </div>
@@ -161,20 +163,166 @@
             <p>&copy; 2025 Jackson Copeland. All rights reserved.</p>
         </footer>
     </div>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox-overlay" class="lightbox-overlay">
+        <div class="lightbox-content">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+            <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous">&larr;</button>
+            <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next">&rarr;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="" />
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
     <script>
-        function showAllPhotos() {
-            // Simple modal-style gallery display
-            alert('Gallery feature coming soon! For now, you can see all photos in the photography section above.');
+        // Lightbox functionality
+        class PhotoLightbox {
+            constructor() {
+                this.overlay = document.getElementById('lightbox-overlay');
+                this.image = document.getElementById('lightbox-image');
+                this.caption = document.getElementById('lightbox-caption');
+                this.closeBtn = document.getElementById('lightbox-close');
+                this.prevBtn = document.getElementById('lightbox-prev');
+                this.nextBtn = document.getElementById('lightbox-next');
+                this.photoItems = Array.from(document.querySelectorAll('.photo-item'));
+                this.currentIndex = 0;
+                
+                this.init();
+            }
             
-            // Scroll back to photography section
-            document.getElementById('photography').scrollIntoView({ 
+            init() {
+                // Add click listeners to photo items
+                this.photoItems.forEach((item, index) => {
+                    item.addEventListener('click', () => {
+                        this.openLightbox(index);
+                    });
+                });
+                
+                // Close lightbox event listeners
+                this.closeBtn.addEventListener('click', () => this.closeLightbox());
+                this.overlay.addEventListener('click', (e) => {
+                    if (e.target === this.overlay) {
+                        this.closeLightbox();
+                    }
+                });
+                
+                // Navigation event listeners
+                this.prevBtn.addEventListener('click', () => this.showPrevious());
+                this.nextBtn.addEventListener('click', () => this.showNext());
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (this.overlay.classList.contains('active')) {
+                        switch(e.key) {
+                            case 'Escape':
+                                this.closeLightbox();
+                                break;
+                            case 'ArrowLeft':
+                                this.showPrevious();
+                                break;
+                            case 'ArrowRight':
+                                this.showNext();
+                                break;
+                        }
+                    }
+                });
+            }
+            
+            openLightbox(index) {
+                this.currentIndex = index;
+                this.showImage();
+                this.overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            closeLightbox() {
+                this.overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            showImage() {
+                const currentItem = this.photoItems[this.currentIndex];
+                const fullSrc = currentItem.getAttribute('data-full-src');
+                const caption = currentItem.getAttribute('data-caption');
+                
+                // Show loading state
+                this.image.style.opacity = '0';
+                
+                // Load full-size image
+                const newImage = new Image();
+                newImage.onload = () => {
+                    this.image.src = newImage.src;
+                    this.image.alt = caption;
+                    this.caption.textContent = caption;
+                    this.image.style.opacity = '1';
+                };
+                newImage.src = fullSrc;
+                
+                // Update navigation button states
+                this.prevBtn.style.display = this.currentIndex > 0 ? 'flex' : 'none';
+                this.nextBtn.style.display = this.currentIndex < this.photoItems.length - 1 ? 'flex' : 'none';
+            }
+            
+            showPrevious() {
+                if (this.currentIndex > 0) {
+                    this.currentIndex--;
+                    this.showImage();
+                }
+            }
+            
+            showNext() {
+                if (this.currentIndex < this.photoItems.length - 1) {
+                    this.currentIndex++;
+                    this.showImage();
+                }
+            }
+        }
+        
+        // Enhanced gallery button functionality
+        function showAllPhotos() {
+            // Scroll to photography section and highlight all photos
+            const photographySection = document.getElementById('photography');
+            photographySection.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'start'
             });
+            
+            // Add a subtle animation to draw attention to the photos
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        item.style.transform = '';
+                    }, 200);
+                }, index * 100);
+            });
         }
         
-        // Simple navigation active state management
-        document.addEventListener('DOMContentLoaded', function() {
+        // Lazy loading for images (progressive enhancement)
+        function initLazyLoading() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                images.forEach(img => img.classList.add('loaded'));
+            }
+        }
+        
+        // Navigation active state management
+        function initNavigation() {
             const navLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
             
@@ -211,6 +359,13 @@
                     }
                 });
             });
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            new PhotoLightbox();
+            initLazyLoading();
+            initNavigation();
         });
     </script>
 </body>

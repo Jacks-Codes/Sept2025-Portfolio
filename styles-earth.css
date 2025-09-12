@@ -243,28 +243,30 @@ main {
 .photo-item {
     position: relative;
     aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(139, 105, 20, 0.15);
+    cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid rgba(139, 105, 20, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(139, 105, 20, 0.15);
 }
 
 .photo-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(139, 105, 20, 0.25);
+    border-color: rgba(139, 105, 20, 0.4);
 }
 
 .photo-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
     transition: all 0.4s ease;
+    filter: grayscale(80%) brightness(1.1);
 }
 
 .photo-item:hover img {
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1);
     transform: scale(1.05);
 }
 
@@ -434,6 +436,172 @@ main {
 .contact-detail {
     color: #7a6b4d;
     font-size: 0.9rem;
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(139, 105, 20, 0.2);
+}
+
+.lightbox-caption {
+    text-align: center;
+    margin-top: 1rem;
+    color: #2c2c2c;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #8b6914;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    background: rgba(139, 105, 20, 0.1);
+    transform: scale(1.1);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(139, 105, 20, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.lightbox-nav:hover {
+    background: rgba(139, 105, 20, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: -70px;
+}
+
+.lightbox-next {
+    right: -70px;
+}
+
+/* Thumbnail Loading States */
+.photo-item.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Lazy Loading Enhancement */
+.photo-item img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item img.loaded {
+    opacity: 1;
+}
+
+/* Mobile Responsive Lightbox */
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95vw;
+        max-height: 95vh;
+        padding: 15px;
+    }
+    
+    .lightbox-image {
+        max-height: 60vh;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-prev {
+        left: -50px;
+    }
+    
+    .lightbox-next {
+        right: -50px;
+    }
+    
+    .lightbox-close {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
 }
 
 /* Footer */
