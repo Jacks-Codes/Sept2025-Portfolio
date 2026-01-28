@@ -11,6 +11,10 @@ body {
     color: #3a3a3a;
     min-height: 100vh;
     font-weight: 400;
+<<<<<<< HEAD
+=======
+    padding-bottom: 0;
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 .container {
@@ -21,14 +25,54 @@ body {
 
 header {
     padding: 4rem 0 3rem;
+<<<<<<< HEAD
     text-align: center;
+=======
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
     border-bottom: 2px solid #8b6914;
     margin-bottom: 3rem;
     position: relative;
     background: linear-gradient(135deg, #faf8f5 0%, #f5f2ed 100%);
 }
 
+<<<<<<< HEAD
 .hero h1 {
+=======
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(139, 105, 20, 0.2);
+    box-shadow: 0 8px 25px rgba(139, 105, 20, 0.15);
+    transition: all 0.3s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+    border-color: rgba(139, 105, 20, 0.4);
+    box-shadow: 0 12px 35px rgba(139, 105, 20, 0.25);
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 1rem;
@@ -36,12 +80,20 @@ header {
     letter-spacing: -0.02em;
 }
 
+<<<<<<< HEAD
 .hero p {
     font-size: 1.2rem;
     color: #7a6b4d;
     font-weight: 400;
     max-width: 600px;
     margin: 0 auto;
+=======
+.hero-text p {
+    font-size: 1.2rem;
+    color: #7a6b4d;
+    font-weight: 400;
+    line-height: 1.6;
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 nav {
@@ -125,7 +177,12 @@ main {
 }
 
 .project-icon {
+<<<<<<< HEAD
     font-size: 2.5rem;
+=======
+    font-size: 1.2rem;
+    font-weight: 600;
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
     min-width: 60px;
     height: 60px;
     display: flex;
@@ -134,6 +191,11 @@ main {
     background: rgba(139, 105, 20, 0.1);
     border-radius: 50%;
     flex-shrink: 0;
+<<<<<<< HEAD
+=======
+    color: #8b6914;
+    border: 2px solid rgba(139, 105, 20, 0.2);
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 .project-details h3 {
@@ -209,28 +271,50 @@ main {
 .photo-item {
     position: relative;
     aspect-ratio: 1;
+<<<<<<< HEAD
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(139, 105, 20, 0.15);
     transition: all 0.3s ease;
     border: 2px solid rgba(139, 105, 20, 0.2);
+=======
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(139, 105, 20, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(139, 105, 20, 0.15);
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 .photo-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(139, 105, 20, 0.25);
+<<<<<<< HEAD
+=======
+    border-color: rgba(139, 105, 20, 0.4);
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 .photo-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+<<<<<<< HEAD
     filter: grayscale(100%);
     transition: all 0.4s ease;
 }
 
 .photo-item:hover img {
     filter: grayscale(0%);
+=======
+    transition: all 0.4s ease;
+    filter: grayscale(80%) brightness(1.1);
+}
+
+.photo-item:hover img {
+    filter: grayscale(0%) brightness(1);
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
     transform: scale(1.05);
 }
 
@@ -402,6 +486,7 @@ main {
     font-size: 0.9rem;
 }
 
+<<<<<<< HEAD
 /* Footer */
 footer {
     background: rgba(139, 105, 20, 0.05);
@@ -411,6 +496,187 @@ footer {
     border-top: 1px solid rgba(139, 105, 20, 0.2);
     color: #7a6b4d;
     font-size: 0.9rem;
+=======
+/* Lightbox Modal */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(139, 105, 20, 0.2);
+}
+
+.lightbox-caption {
+    text-align: center;
+    margin-top: 1rem;
+    color: #2c2c2c;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #8b6914;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    background: rgba(139, 105, 20, 0.1);
+    transform: scale(1.1);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(139, 105, 20, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.lightbox-nav:hover {
+    background: rgba(139, 105, 20, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: -70px;
+}
+
+.lightbox-next {
+    right: -70px;
+}
+
+/* Thumbnail Loading States */
+.photo-item.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Lazy Loading Enhancement */
+.photo-item img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item img.loaded {
+    opacity: 1;
+}
+
+/* Mobile Responsive Lightbox */
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95vw;
+        max-height: 95vh;
+        padding: 15px;
+    }
+    
+    .lightbox-image {
+        max-height: 60vh;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-prev {
+        left: -50px;
+    }
+    
+    .lightbox-next {
+        right: -50px;
+    }
+    
+    .lightbox-close {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Footer */
+footer {
+    background: #faf8f5;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    margin-left: -40px;
+    margin-right: -40px;
+    color: rgba(122, 107, 77, 0.7);
+    font-size: 0.85rem;
+    width: calc(100% + 80px);
+    box-sizing: border-box;
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 /* Responsive Design */
@@ -419,10 +685,32 @@ footer {
         padding: 0 20px;
     }
     
+<<<<<<< HEAD
     .hero h1 {
         font-size: 2.2rem;
     }
     
+=======
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .profile-photo img {
+        width: 150px;
+        height: 150px;
+    }
+    
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
     .section {
         padding: 2rem;
     }
@@ -460,6 +748,17 @@ footer {
     .skills-list {
         justify-content: center;
     }
+<<<<<<< HEAD
+=======
+    
+    footer {
+        padding: 2rem 1rem;
+        margin-bottom: 1rem;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+    }
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }
 
 @media (max-width: 480px) {
@@ -479,4 +778,16 @@ footer {
         display: block;
         margin: 0.5rem 0;
     }
+<<<<<<< HEAD
+=======
+    
+    footer {
+        padding: 1.5rem 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+    }
+>>>>>>> 050524a497775996ff220b3922dd123c60ae1d94
 }

@@ -1,2 +1,1 @@
-# Sept2025-Portfolio
-Updated and Accurate web portfolio
+# Portfolio - Jackson Copeland
